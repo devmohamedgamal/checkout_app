@@ -1,9 +1,7 @@
 import 'package:checkout_app/Feauters/checkout/presentation/widgets/my_cart_view_body.dart';
-import 'package:checkout_app/core/utils/assets_manger.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/utils/styles.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 
 class MyCartView extends StatelessWidget {
   const MyCartView({super.key});
@@ -11,17 +9,10 @@ class MyCartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Center(
-          child: SvgPicture.asset(AssetsManger.arrowBack),
-        ),
-        title: const Text(
-          'My Cart',
-          style: Styles.style25,
-        ),
-        centerTitle: true,
-      ),
+      appBar: buildAppBar(title: 'My Cart'),
       body: const MyCartViewBody(),
     );
   }
+
+  
 }
