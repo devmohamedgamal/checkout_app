@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/custom_btn.dart';
 import 'order_info_item.dart';
+import 'total_price.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -38,21 +39,7 @@ class MyCartViewBody extends StatelessWidget {
             color: Color(0xFFC6C6C6),
           ),
           const SizedBox(height: 16),
-          const Row(
-            children: [
-              Text(
-                'Total',
-                textAlign: TextAlign.center,
-                style: Styles.style24,
-              ),
-              Spacer(),
-              Text(
-                '\$50.97',
-                textAlign: TextAlign.center,
-                style: Styles.style24,
-              ),
-            ],
-          ),
+          const TotalPrice(),
           const SizedBox(height: 16),
           CustomBtn(
             text: 'Complete Payment',
