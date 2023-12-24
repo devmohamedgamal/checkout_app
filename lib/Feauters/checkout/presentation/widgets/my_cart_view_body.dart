@@ -1,3 +1,4 @@
+import 'package:checkout_app/Feauters/checkout/presentation/widgets/payments_methods_list_view.dart';
 import 'package:checkout_app/core/utils/app_router.dart';
 import 'package:checkout_app/core/utils/assets_manger.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/custom_btn.dart';
 import 'order_info_item.dart';
+import 'payments_methods_bottom_sheet.dart';
 import 'total_price.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -44,7 +46,12 @@ class MyCartViewBody extends StatelessWidget {
           CustomBtn(
             text: 'Complete Payment',
             onTap: () {
-              context.push(AppRouter.kPaymentDetailsView);
+              // context.push(AppRouter.kPaymentDetailsView);
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return const PaymentsMethodsBottomSheet();
+                  });
             },
           ),
           const SizedBox(height: 16),
